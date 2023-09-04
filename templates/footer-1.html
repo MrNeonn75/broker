@@ -1,0 +1,205 @@
+<!-- PAGE -->
+
+<section class="page-section contact dark">
+
+    <div class="container">
+
+
+
+        <div class="row">
+
+            <div class="col-md-6 wow fadeInLeft" data-wow-offset="200" data-wow-delay="200ms">
+
+
+
+                 <!-- Get in touch -->
+
+                <h2 class="section-title wow fadeInDown text-left" data-wow-offset="200" data-wow-delay="100ms">
+
+                    <span>Bizimlə Əlaqə Saxlayın</span>
+
+                </h2>
+
+
+
+                <!-- Contact form -->
+
+                <form name="contact-form" method="POST" class="contact-form" id="contact-form">
+                    {% csrf_token %}
+
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+
+
+                            <div class="outer required">
+
+                                <div class="form-group af-inner has-icon">
+
+                                    <label class="sr-only" for="name">Name</label>
+
+                                    <span style="width:30px">{{ form.name }}</span>
+
+                                    <span class="form-control-icon"><i class="fa fa-user"></i></span>
+
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="col-md-6">
+
+
+
+                            <div class="outer required">
+
+                                <div class="form-group af-inner has-icon">
+
+                                    <label class="sr-only" for="email">Email</label>
+
+                                    <span style="width:30px">{{ form.email }}</span>
+
+                                    <span class="form-control-icon"><i class="fa fa-envelope"></i></span>
+
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="outer required">
+
+                        <div class="form-group af-inner has-icon">
+
+                            <label class="sr-only" for="subject">Subject</label>
+
+                            <span style="width:30px">{{ form.subject }}</span>
+
+                            <span class="form-control-icon"><i class="fa fa-bars"></i></span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="form-group af-inner has-icon">
+
+                        <label class="sr-only" for="input-message">Message</label>
+
+                        <span style="width:30px">{{ form.message }}</span>
+
+                        <span class="form-control-icon"><i class="fa fa-bars"></i></span>
+
+                    </div>
+
+
+
+                    <div class="outer required">
+
+                        <div class="form-group af-inner">
+
+                            <button type="submit" class="form-button form-button-submit btn btn-block btn-theme ripple-effect btn-theme-dark">Mesajı göndər</button>
+
+                        </div>
+
+                    </div>
+
+
+
+                </form>
+
+                <!-- /Contact form -->
+
+            </div>
+
+            <div class="col-md-6 wow fadeInRight" data-wow-offset="200" data-wow-delay="200ms">
+
+                
+
+                <h2 class="section-title wow fadeInDown text-left" data-wow-offset="200" data-wow-delay="100ms">
+
+                        <span>Unvanlarımız</span>
+
+                </h2>
+
+                <p>
+Sizi söhbət üçün ofisimizə dəvət edirik. Gəlin, zövqünüzə uyğun şəxsi bir qonaq qəbul edərək rahat oturma sahələrimizdə əla qəhvə təklif edirik. Burada sizi gözləyirik!.</p>
+
+
+
+                <ul class="media-list contact-list">
+
+                    <li class="media">
+
+                        <div class="media-left"><i class="fa fa-home"></i></div>
+
+                        <div class="media-body">Ünvan: İsfəndiyar Zülalov 30.</div>
+
+                    </li>
+
+                    <li class="media">
+
+                        <div class="media-left"><i class="fa fa-phone"></i></div>
+
+                        <div class="media-body">Texniki Dəstək: 99412 590-15-90</div>
+
+                    </li>
+
+                    <li class="media">
+
+                        <div class="media-left"><i class="fa fa-envelope"></i></div>
+
+                        <div class="media-body">E mails: emin.mm44@gmail.com</div>
+
+                    </li>
+
+                    <li class="media">
+
+                        <div class="media-left"><i class="fa fa-clock-o"></i></div>
+
+                        <div class="media-body">Iş saatı: 09:30-21:00 (Bazar gunləri işləmir)</div>
+
+                    </li>
+
+                    <li class="media">
+
+                        <div class="media-left"><i class="fa fa-map-marker"></i></div>
+
+                        <div class="media-body">
+    <a href="https://www.google.com/maps/@40.38477,49.827565,17z?hl=en&entry=ttu" target="_blank">Ünvanı xəritədə gör</a>
+</div>
+
+
+                    </li>
+
+                </ul>
+
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- /Get in touch -->
+
+
+
+    </div>
+
+</section>
+
+<!-- /PAGE -->

@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <!-- WRAPPER -->
+        <div class="wrapper">
+
+            
+
+            <!-- CONTENT AREA -->
+            <div class="content-area">
+
+                <!-- BREADCRUMBS -->
+                <section class="page-section breadcrumbs text-center">
+                    <div class="container">
+                        <div class="page-header">
+                            <h1>Qeydiyyat</h1>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li><a href="/">Ana Səhifə</a></li>
+                            <li><a href="/property/">Evlər</a></li>
+                            <li class="active">Qeydiyyat</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- /BREADCRUMBS -->
+
+                <!-- PAGE -->
+                <section class="page-section color">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3 class="block-title"><span>Giriş</span></h3>
+                                <form method="POST" class="form-login">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col-md-12 hello-text-wrap">
+                                            <span class="hello-text text-thin">Salam, Qeydiyyat olmaq üçün xoş gəmişsiniz</span>
+                                        </div>
+                                        <div class="col-md-12 col-lg-6" style="display: none;">
+                                            <a class="btn btn-theme btn-block btn-icon-left facebook" href="#"><i class="fa fa-facebook"></i>Sign in with Facebook</a>
+                                        </div>
+                                        <div class="col-md-12 col-lg-6" style="display: none;">
+                                            <a class="btn btn-theme btn-block btn-icon-left twitter" href="#"><i class="fa fa-twitter"></i>Sign in with Twitter</a>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">{{ form.first_name }}</div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">{{ form.last_name }}</div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">{{ form.email }}</div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">{{ form.username }}</div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">{{ form.password1 }}</div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group">{{ form.password2 }}</div>
+                                        </div>
+                                        
+                                        <div class="col-md-6">
+                                            <button type="submit" class="btn btn-theme btn-block btn-theme-dark" href="#">Qeyd Ol</a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-sm-6">
+                                <h3 class="block-title"><span>Yeni Hesab Yarat</span></h3>
+                                <form action="#" class="create-account">
+                                    <div class="row">
+                                        <div class="col-md-12 hello-text-wrap">
+                                            <span class="hello-text text-thin">Öz hesabını yarat</span>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <h3 class="block-title">Kampaniyalarımlzdan yararlanmaq üçün Bugün qeydiyyat olun</h3>
+                                            <ul class="list-check">
+                                                <li>online sifariş statusu</li>
+                                                <li>Hazır sövdələşmələrə baxın</li>
+                                                <li>Eksklüziv xəbərlər və özəl satışlar əldə etmək üçün qeydiyyatdan keçin</li>
+                                                <li>Tez alış əmlakları</li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- /PAGE -->
+
+            </div>
+            <!-- /CONTENT AREA -->
+
+
+            <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
+
+        </div>
+        <!-- /WRAPPER -->
+{% endblock content %}

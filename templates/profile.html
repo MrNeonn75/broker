@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <!-- WRAPPER -->
+        <div class="wrapper">
+
+            
+            <!-- CONTENT AREA -->
+            <div class="content-area">
+
+                <!-- BREADCRUMBS -->
+                <section class="page-section breadcrumbs text-right">
+                    <div class="container">
+                        <div class="page-header">
+                            <h1>Mənzillərin siayhısı</h1>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li><a href="#"></a></li>
+                            <li><a href="#"></a></li>
+                            <li class="active"></li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- /BREADCRUMBS -->
+
+                <!-- PAGE WITH SIDEBAR -->
+                <section class="page-section with-sidebar sub-page">
+                    
+                    <nav class="navbar bg-body-tertiary" style="background-color: #3C64FF;">
+                        <div class="container-fluid">
+                            <form class="d-flex panel-form" role="search">
+                                <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success search-btn" type="submit">Search</button>
+                            </form>
+                            <div class="section-panel panel-icon">
+                                <a href="{% url 'liked' %}"><i class="fa-solid fa-heart"></i></a>
+                                <a href="{% url 'saved' %}"><i class="fa-solid fa-bookmark"></i></a>
+                            </div>
+                        </div>
+                      </nav>
+                    <div class="container" style="width:90%;">
+                        
+                        <div class="row">
+                            <!-- CONTENT -->
+                            <div class="col-md-9 content property-listing" id="content">
+
+                                <!-- Car Listing -->
+                                {% if posts %}
+                                {% for post in posts %}
+                                
+                                <div class="thumbnail no-border no-padding thumbnail-property-card clearfix {{ post.post.product_category }}">
+                                    <div class="media">
+                                        <a class="media-link" data-gal="prettyPhoto" href="{{ post.post.image1.url }}">
+                                            <img src="{{ post.post.image1.url }}" alt="" style="width:370px;height:220px"/>
+                                            <span class="icon-view"><strong><i class="fa fa-eye"></i></strong></span>
+                                        </a>
+                                    </div>
+                                    <div class="caption">
+                                        <div class="rating">
+                                            {% if request.path == "/profile/saved/" %}
+                                            <a href="{% url 'delete-saved-post' post.id %}" class="closebtn" style="font-size: 40px;">&times;</a>
+                                            {% else %}
+                                            <a href="{% url 'delete-liked-post' post.id %}" class="closebtn" style="font-size: 40px;">&times;</a>
+                                            {% endif %}
+                                        </div>
+                                        <h4 class="caption-title"><a href="{% url 'property-detail-view' post.post.id %}">{{ post.post.product_name }}</a></h4>
+                                        <h5 class="caption-title-sub">{{ post.post.product_price }} AZN</h5>
+                                        <div class="caption-text" style="width: 100%;margin: 8px;height: 80px;overflow-x: hidden;overflow-y: auto;text-align:justify;">{{ post.post.product_article }}</div>
+                                        <table class="table">
+                                            <tr>
+                                                <td><i class="fa fa-expand"></i> {{ post.post.square }} kv </td>
+                                                <td><i class="fa fa-bed"></i> {{ post.post.rooms }} otaq</td>
+                                                <td><i class="fa fa-tint"></i> {{ post.post.date }}</td>
+
+                                                <td class="buttons"><a class="btn btn-theme" href="{% url 'property-detail-view' post.post.id %}">Ətraflı</a></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                {% endfor %}
+                                {% endif %}
+                                
+
+                                
+
+                                <!-- /Car Listing -->
+
+                                {% include "./pagination.html" %}
+                                
+
+                            </div>
+                            <!-- /CONTENT -->
+
+                            <!-- SIDEBAR -->
+                            {% include './aside.html' %}
+                            <!-- /SIDEBAR -->
+
+                        </div>
+                    </div>
+                </section>
+                <!-- /PAGE WITH SIDEBAR -->
+
+                
+
+            </div>
+            <!-- /CONTENT AREA -->
+
+            {% include "./footer-1.html" %}
+
+            <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
+
+        </div>
+        <!-- /WRAPPER -->
+{% endblock content %}

@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+        <!-- WRAPPER -->
+        <div class="wrapper">
+
+
+
+            <!-- CONTENT AREA -->
+            <div class="content-area">
+
+                <!-- BREADCRUMBS -->
+                <section class="page-section breadcrumbs text-center">
+                    <div class="container">
+                        <div class="page-header">
+                            <h1>{{ post.product_name }}</h1>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li><a href="/">Ana Səhifə</a></li>
+                            <li><a href="/property/" >Evlər</a></li>
+                            <li class="active">{{ post.product_name }}</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- /BREADCRUMBS -->
+
+                <!-- PAGE WITH SIDEBAR -->
+                <section class="page-section sub-page">
+                    <div class="container" style="width: 80% !important;">
+
+                        <div class="row">
+                            <div class="col-lg-8 col-md-7 col-sm-12 project-media">
+                                <div class="img-carousel">
+                                    {% if post.image1 %}
+                                    <div><img   src="{{ post.image1.url }}" alt="{{ post.image1.url }}"/></div>
+                                    {% endif %}
+
+                                    {% if post.image2 %}
+                                    <div><img src="{{ post.image2.url }}" alt=""/></div>
+                                    {% endif %}
+                                    
+                                    {% if post.image3 %}
+                                    <div><img src="{{ post.image3.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.image4 %}
+                                    <div><img src="{{ post.image4.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.image5 %}
+                                    <div><img src="{{ post.image5.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.image6 %}
+                                    <div><img src="{{ post.image6.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.image7 %}
+                                    <div><img src="{{ post.image7.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.image8 %}
+                                    <div><img src="{{ post.image8.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.image9 %}
+                                    <div><img src="{{ post.image9.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.image10 %}
+                                    <div><img src="{{ post.image10.url }}" alt=""/></div>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-5 col-sm-7">
+                                <div class="project-overview">
+                                    <h3 class="block-title"><span>{{ post.product_name }}</span></h3>
+                                    <p>{{ post.product_article }}</p>
+                                </div>
+
+                                <div class="project-details">
+                                    <h3 class="block-title"><span>Mənzil Haqqında</span></h3>
+                                    <dl class="dl-horizontal">
+                                        <dt>Sahə</dt>
+                                        <dd>{{ post.square }}</dd>
+                                        <dt>Otaq</dt>
+                                        <dd>{{ post.rooms }}</dd>
+                                        <dt>Tarix</dt>
+                                        <dd>{{ post.date }}</dd>
+                                    </dl>
+                                </div>
+                                <div class="like-and-save">
+                                    
+                                    {% if user.is_authenticated %}
+                                        {% if is_saved %}
+                                            <a href="{% url 'delete-detail-saved-post' post.id %}"><div class="save"><i class="fa-solid fa-bookmark" style="color:#1e3050;"></i></div></a>
+                                        {% else %}
+                                            <a href="{% url 'save-post' post.id %}"><div class="save"><i class="fa-solid fa-bookmark" style="color:white;"></i></div></a>
+                                        {% endif %}
+                                        {% if is_liked %}
+                                            <a href="{% url 'delete-detail-liked-post' post.id %}"><div class="like"><i class="fa-solid fa-heart" style="color:#1e3050;"></i></div></a>
+                                        {% else %}
+                                            <a href="{% url 'like-post' post.id %}"><div class="like"><i class="fa-solid fa-heart" style="color:white;"></i></div></a>
+                                        {% endif %}
+                                    {% else %}
+                                        <div class="like"><a href="{% url 'log-in' %}" onclick="alert('Şəxsi hesabınıza daxil olun.')"><i class="fa-solid fa-heart" style="color:white;"></i></div></a>
+                                        <div class="save"><a href="{% url 'log-in' %}" onclick="alert('Şəxsi hesabınıza daxil olun.')"><i class="fa-solid fa-bookmark" style="color:white;"></i></div></a>
+                                    {% endif %}
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
+                        <hr class="page-divider"/>
+
+                        <hr class="page-divider half"/>
+                        
+                    </div>
+                </section>
+                <!-- /PAGE WITH SIDEBAR -->
+
+                <!-- Comment section -->
+                <section class="comment-section">
+                    <div class="comment-container-solo">
+                        <form action="" method="get">
+                            <div class="comment-input-bar-solo">
+                                {{ comment.comment }}
+                                <button style="position: absolute; margin: 6px;" type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                            </div>
+                        </form>
+                        {% for com in coms %}
+                        <div class="comments-solo">
+                            <div>
+                                <div class="comment-solo">
+                                    <div>
+                                        <div class="comment-user-solo"><b>{{ com.user.email }}</b></div>
+                                        <div class="comment-date-solo">{{ com.comment_date }}</div>
+                                    </div>
+                                    
+                                    <div class="comment-article-solo">
+                                        <p>{{ com.comment }}</p>
+                                    </div>
+                                    <div class="comment-buttons-solo">
+                                        {% if user == com.user %}
+                                        <a href="{% url 'remove-comment' post.id com.id %}"><b>Remove</b></a>
+                                        {% endif %}
+                                        
+                                        <!-- <a onclick="openAnswerInput()"><b><i class="fa-solid fa-reply"></i> Reply</b></a>
+                                        <a onclick="openAnswers()"><b>Answers</b></a>
+                                        <a onclick="closeAnswers()" id="hide-answers-button"><b>Hide</b></a>
+                                        <script>
+                                            function openAnswers(){
+                                                document.getElementById("answers").style.display = "block";
+                                                document.getElementById("hide-answers-button").style.display = "inline";
+                                            }
+
+                                            function closeAnswers(){
+                                                document.getElementById("answers").style.display = "none";
+                                                document.getElementById("hide-answers-button").style.display = "none";
+                                                document.getElementById("answer-input").style.display = "none";
+                                            }
+
+                                            function openAnswerInput(){
+                                                document.getElementById("answer-input").style.display = "block";
+                                                document.getElementById("hide-answers-button").style.display = "inline";
+                                            }
+                                        </script> -->
+                                    </div>
+                                    
+                                </div>
+
+                            </div>
+                            
+
+                        </div>
+                        {% endfor %}
+                    </div>
+                </section>
+                <!-- /Comment section -->
+
+            </div>
+            <!-- /CONTENT AREA -->
+
+            {% include './footer-1.html' %}
+
+            <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
+
+        </div>
+        <!-- /WRAPPER -->
+
+{% endblock content %}
+       

@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+        <!-- WRAPPER -->
+        <div class="wrapper">
+
+            <!-- CONTENT AREA -->
+            <div class="content-area">
+
+                <!-- BREADCRUMBS -->
+                <section class="page-section breadcrumbs text-right">
+                    <div class="container">
+                        <div class="page-header">
+                            <h1>Blog Post Səhifəsi</h1>
+
+                </section>
+                <!-- /BREADCRUMBS -->
+
+                <!-- PAGE WITH SIDEBAR -->
+                <div class="page-section with-sidebar">
+                    <div class="container" style="width:80%;">
+                        <div class="row">
+                            <!-- SIDEBAR -->
+                            {% include './aside.html' %}
+                            <!-- /SIDEBAR -->
+
+                            <!-- CONTENT -->
+                            <div class="col-md-9 content" id="content">
+
+                                {% if user.is_authenticated %}
+                                <!-- Blog posts -->
+                                    {% if blog %}
+                                    {% for post in blog %}
+                                    <article class="post-wrap">
+                                        <div class="post-media">
+                                            <a href="{% if post.post_image_link %}{{ post.post_image_link }}{% else %}{{ post.post_image1.url }}{% endif %}" data-gal="prettyPhoto"><img src="{{ post.post_image1.url }}" alt="" style="max-height: 600px;"></a>
+                                        </div>
+                                        <div class="post-header">
+                                            <h2 class="post-title"><a href="{% url 'detail-view' post.id %}">{{ post.post_title }}</a></h2>
+                                            <div class="post-meta">{{ post.post_subtitle }}</div>
+                                        </div>
+                                        <div class="post-body">
+                                            <div class="post-excerpt">
+                                                <p>{{ post.post_article }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="post-footer">
+                                            <span class="post-read-more"><a href="{% url 'detail-view' post.id %}" class="btn btn-theme btn-theme-transparent btn-icon-left">Ətraflı</a></span>
+                                        </div>
+                                    </article>
+                                    {% endfor %}
+                                    {% endif %}
+                                <!-- /Blog posts -->
+
+                                {% include "./pagination.html" %}
+                                {% else %}
+
+                                <section class="page-section text-center error-page light" style="background-color: inherit;">
+                    <div class="container">
+
+                        <h2><i class="fa fa-warning"></i> Blog səhifəsi üçün hesabınıza daxil olmalısınız! </h2>
+                        <p>
+                            <a class="btn btn-info" href="{% url 'log-in' %}" style="text-decorate: none; color: white;">Daxil ol</a>
+                            <a class="btn btn-info" href="{% url 'sign-in' %}" style="text-decorate: none; color: white;">Qeydiyyatdan keç</a>
+                        </p>
+
+                    </div>
+                </section>
+                                {% endif %}
+
+                            </div>
+                            <!-- /CONTENT -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /PAGE WITH SIDEBAR -->
+
+            </div>
+            <!-- /CONTENT AREA -->
+
+            {% include "./footer-1.html" %}
+
+            <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
+
+        </div>
+        <!-- /WRAPPER -->
+{% endblock content %}

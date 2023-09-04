@@ -1,0 +1,1124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+        <!-- WRAPPER -->
+
+        <div class="wrapper">
+
+            <!-- CONTENT AREA -->
+
+            <div class="content-area">
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section no-padding slider">
+
+                    <div class="container full-width">
+
+                        <div class="main-slider">
+
+                            <div class="owl-carousel" id="main-slider">
+
+
+
+                                <!-- Slide 2 -->
+
+                                <div class="item slide2 ver2">
+
+                                    <div class="caption">
+
+                                        <div class="container">
+
+                                            <div class="div-table">
+
+                                                <div class="div-cell">
+
+                                                    <div class="caption-content">
+
+                                                        
+
+
+
+                                                        <h2 class="caption-subtitle">
+
+                                                            <span class="span-caption">Sizə uyğun evin tapılmasında köməklik edəcəyik</span>
+
+                                                            Xəyal etdiyiniz əmlakı tapın
+
+                                                        </h2>
+
+                                                        <p class="caption-text">
+
+                                                            Məqsədlərinizi həqiqətləşdirmək üçün buradayıq. Unikal seçimlərimiz və yüksək keyfiyyətimizlə sizi qarşılayır, əmlak dünyasında fərqli bir perspektiv təklif edirik. Sizinlə birlikdə inkişaf etmək üçün hazırıq
+
+                                                        </p>
+
+                                                        <p class="caption-text">
+
+                                                            <a class="btn btn-theme ripple-effect btn-theme-md" href="{% url 'property' %}"><i class="fa fa-list">&nbsp;</i> Bütün mənzillərə baxın</a>
+
+                                                        </p>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- /Slide 2 -->
+
+
+
+                                <!-- Slide 3 -->
+
+                                <div class="item slide3 ver3">
+
+                                    <div class="caption">
+
+                                        <div class="container">
+
+                                            <div class="div-table">
+
+                                                <div class="div-cell">
+
+                                                    <div class="caption-content">
+
+
+
+                                                        <h2 class="caption-title">Mənzillər üçün</h2>
+
+                                                        <h3 class="caption-subtitle">Ən yaxşı sövdələşmələr</h3>
+
+                                                        <p class="caption-text">
+
+                                                            Xəyallarınızdakı evi tapmağınıza kömək etmək üçün buradayıq. Sizin üçün ən uyğun əmlak həlləri üçün professional xidmət göstəririk.
+
+                                                        </p>
+
+                                                        <p class="caption-text">
+
+                                                            <a class="btn btn-theme ripple-effect btn-theme-md" href="{% url 'property' %}">Bütün mənzillərə bax</a>
+
+                                                        </p>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- /Slide 3 -->
+
+
+
+                                <!-- Slide 4 -->
+
+                                <div class="item slide4 ver4">
+
+                                    <div class="caption">
+
+                                        <div class="container">
+
+                                            <div class="div-table">
+
+                                                <div class="div-cell">
+
+                                                    <div class="caption-content">
+
+                                                        <h2 class="caption-title">Öz evinin sahibi ol</h2>
+
+                                                        <h3 class="caption-subtitle"><span>Ən yaxşı təklifləri sizlərə təqdim edirik</span></h3>
+
+                                                        <p class="caption-text">
+
+
+Sizin ev arzularınızı həyata keçirmək bizim işimizdir. Əmlak sahəsindəki xüsusi tələbləriniz üçün özəl həllər təklif edirik.
+
+                                                        </p>
+
+                                                        <p class="caption-text">
+
+                                                            <a class="btn btn-theme ripple-effect btn-theme-md" href="{% url 'property' %}">Bütün mənzillərə bax</a>
+
+                                                        </p>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- /Slide 4 -->
+
+
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section">
+
+                    <div style="margin: auto 100px;">
+
+
+
+                        <h2 class="section-title wow fadeInUp" data-wow-offset="70" data-wow-delay="100ms">
+
+                            <span>SİZİN ÜÇÜN ƏN SON ƏMLAK TƏKLİFİ</span>
+                                    Kampanyalar
+
+                        </h2>
+
+
+
+                        <div class="tab-content wow fadeInUp" data-wow-offset="70" data-wow-delay="500ms">
+
+
+
+                            <!-- tab 2 -->
+
+                            <div class="tab-pane fade active in" id="tab-2">
+
+
+
+                                <div class="swiper swiper--offers-popular">
+
+                                    <div class="swiper-container">
+
+
+
+                                        <div class="swiper-wrapper">
+
+                                            <!-- Slides -->
+
+                                            {% if property %}
+                                            {% for post in property %}
+                                            <div class="swiper-slide" style="max-height: 350px;">
+
+                                                <div class="thumbnail no-border no-padding thumbnail-property-card">
+
+                                                    <div class="media">
+
+                                                        <span class="p-price" style="background: #cc3300;">{{ post.campaign_price }}</span>
+
+                                                        <a class="media-link" data-gal="prettyPhoto" href="{{ post.product.image.url }}">
+
+                                                            <img src="{{ post.product.image1.url }}" alt="" style="width: 300px;height:220px;"/>
+
+                                                            <span class="icon-view"><strong><i class="fa fa-arrows-alt"></i></strong></span></a>
+
+                                                    </div>
+
+                                                    <div class="caption text-center">
+
+                                                        <div class="media-left">
+
+                                            <div class="meta-date" style="padding:8px;background: #cc3300;color:white;">
+
+                                                <div class="day"><b>{{ post.final_date.day }}</b></div>
+
+                                                <div class="month"><b>
+                                                    {% if post.final_date.month == 1 %}
+                                                        YAN
+                                                    {% elif post.final_date.month == 2 %}
+                                                    FEV
+                                                    {% elif post.final_date.month == 3 %}
+                                                    MAR
+                                                    {% elif post.final_date.month == 4 %}
+                                                    APR
+                                                    {% elif post.final_date.month == 5 %}
+                                                    MAY
+                                                    {% elif post.final_date.month == 6 %}
+                                                    IYUN
+                                                    {% elif post.final_date.month == 7 %}
+                                                    IYUL
+                                                    {% elif post.final_date.month == 8 %}
+                                                    AVG
+                                                    {% elif post.final_date.month == 9 %}
+                                                    SEN
+                                                    {% elif post.final_date.month == 10 %}
+                                                    OKT
+                                                    {% elif post.final_date.month == 11 %}
+                                                    NOY
+                                                    {% else %}
+                                                    DEC
+                                                    {% endif %}
+
+                                                </b></div>
+
+                                            </div>
+
+                                        </div>
+                                                        <div class="media-body">
+                                                        <h4 class="caption-title"><a href="#">{{ post.product.product_name }}</a></h4>
+
+                                                        <div class="caption-text">{{ post.product.product_subtitle }}</div>
+
+                                                        <div class="buttons">
+
+                                                            <a class="btn btn-theme ripple-effect" href="{% url 'property-detail-view' post.product.id %}">əmlaka baxmaq</a>
+
+                                                        </div>
+                                                        </div>
+                                                        <table class="table">
+
+                                                            <tr>
+
+                                                                <td><i class="fa fa-expand"></i> {{ post.product.square }} m2 </td>
+
+                                                                <td><i class="fa fa-bed"></i> {{ post.product.rooms }} otaq</td>
+
+
+
+                                                            </tr>
+
+                                                        </table>
+
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            {% endfor %}
+                                            {% else %}
+                                            <div style="width: 100%;padding: 16px;font-size: 72px;color: red;">
+                                                <p><i class="fa-solid fa-xmark"></i>Mövcud kapaniya yoxdur</p>
+                                            </div>
+                                            {% endif %}
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+                                    <!-- If we need navigation buttons -->
+
+                                    <div class="swiper-button-next"><i class="fa fa-angle-right"></i></div>
+
+                                    <div class="swiper-button-prev"><i class="fa fa-angle-left"></i></div>
+
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section dark">
+
+                    <div class="container">
+
+
+
+                        <div class="row">
+
+                            <div class="col-md-6 wow fadeInLeft" data-wow-offset="200" data-wow-delay="100ms">
+
+                                <h2 class="section-title text-left">
+
+                                    <span>BİZ KİMİK?</span>
+
+                                </h2>
+
+                                <p>"Biz, əmlak sahəsində lider bir şirkətik. Təcrübəli və mütəxəssis bir komandayıq və müştərilərimizə yüksək keyfiyyətli xidmət göstəririk. Məqsədimiz, müştərilərimizin əmlak ehtiyaclarını ən yaxşı şəkildə anlamaq və onlara uyğun həllər təqdim etməkdir. İşimizi şəfqətlə yerinə yetiririk və müştəri memnuniyyətini hər zaman öncəyə tuturuq. Əmlak sahəsində geniş bilik və təcrübəyə malikik və sahədəki yenilikləri yaxından izləyirik. Profesional yanaşmamız, etibarlılığımız və doğruluğumuzla müştərilərimizin bizə olan güvənini qazanırıq. Sizinlə əmlak sahəsində ən yaxşı təcrübəni təqdim etmək üçün buradayıq." </p>
+
+                                <p class="btn-row">
+
+                                    <a href="{% url 'about' %}" class="btn btn-theme ripple-effect btn-theme-md"><i class="fa fa-chevron-right">&nbsp;</i>haqqımızda daha çox oxuyun</a>
+
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section">
+
+                    <div class="container">
+
+
+
+                        <h2 class="section-title wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                            <small>Öz istəyinizlə seçilmiş daşınmaz əmlak agentləri sizə rəhbərlik etməkdə və sizin xidmətinizdədir </small>
+
+                            <span>Daşınmaz əmlak AGENTLƏRİNDƏN PROFESSIONAL RƏHBƏRLƏR</span>
+
+                        </h2>
+
+
+
+                        <!-- Team row -->
+
+                        <div class="row">
+
+
+
+                            <!-- Team 1 -->
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                                <div class="thumbnail thumbnail-team no-border no-padding">
+
+                                    <div class="media">
+
+                                        <img src="{% static 'assets/img/preview/team/team-270x270x1.jpg' %}" alt=""/>
+
+                                    </div>
+
+                                    <div class="caption">
+
+                                        <h4 class="caption-title">Günay Seyidova <small>Müstəri xidmətləri meneceri</small></h4>
+
+                                        <ul class="team-details">
+
+                                            <li><i class="fa fa-skype">&nbsp;</i> gnysydv555</li>
+
+                                            <li><i class="fa fa-phone">&nbsp;</i>  994515129552</li>
+
+                                            <li><i class="fa fa-envelope">&nbsp;</i> <a href="mailto:gunay_seyid555@gmail.com">gunay_seyid555@gmail.com</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- /Team 1 -->
+
+
+
+                            <!-- Team 2 -->
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="200ms">
+
+                                <div class="thumbnail thumbnail-team no-border no-padding">
+
+                                    <div class="media">
+
+                                        <img src="{% static 'assets/img/preview/team/team-270x270x2.jpg' %}" alt=""/>
+
+                                    </div>
+
+                                    <div class="caption">
+
+                                        <h4 class="caption-title">Anar Cəfərov <small>Qrup lideri</small></h4>
+
+                                        <ul class="team-details">
+
+                                            <li><i class="fa fa-skype">&nbsp;</i> AnarGafar1590</li>
+
+                                            <li><i class="fa fa-phone">&nbsp;</i>  994509784564</li>
+
+                                            <li><i class="fa fa-envelope">&nbsp;</i> <a href="mailto:AnarGafar44@gmail.com">AnarGafar44@gmail.com</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- /Team 2 -->
+
+
+
+                            <!-- Team 3 -->
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="300ms">
+
+                                <div class="thumbnail thumbnail-team no-border no-padding">
+
+                                    <div class="media">
+
+                                        <img src="{% static 'assets/img/preview/team/team-270x270x3.jpg' %}" alt=""/>
+
+                                    </div>
+
+                                    <div class="caption">
+
+                                        <h4 class="caption-title">Nərmin Talıbova <small>Texniki dəstək</small></h4>
+
+                                        <ul class="team-details">
+
+                                            <li><i class="fa fa-skype">&nbsp;</i> Narmin4564</li>
+
+                                            <li><i class="fa fa-phone">&nbsp;</i>  994515370629</li>
+
+                                            <li><i class="fa fa-envelope">&nbsp;</i> <a href="mailto:Narmin_00@gmail.com">Narmin_00@gmail.com</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- /Team 3 -->
+
+
+
+                            <!-- Team 4 -->
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="400ms">
+
+                                <div class="thumbnail thumbnail-team no-border no-padding">
+
+                                    <div class="media">
+
+                                        <img src="{% static 'assets/img/preview/team/team-270x270x4.jpg' %}" alt=""/>
+
+                                    </div>
+
+                                    <div class="caption">
+
+                                        <h4 class="caption-title">Seymur Mustafayev <small>Hüquqşünans</small></h4>
+
+                                        <ul class="team-details">
+
+                                            <li><i class="fa fa-skype">&nbsp;</i> Seymur0728</li>
+
+                                            <li><i class="fa fa-phone">&nbsp;</i>  994515560728</li>
+
+                                            <li><i class="fa fa-envelope">&nbsp;</i> <a href="mailto:Seymur.mm44@gmail.com">Semur.mm44@gmail.com</a></li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- Team 4 -->
+
+
+
+                        </div>
+
+                        <!-- /Team row -->
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+                <!-- PAGE -->
+
+                <!-- /PAGE -->
+
+
+
+                
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section image">
+
+                    <div class="container">
+
+
+
+                        <div class="row">
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                                <div class="thumbnail thumbnail-counto no-border no-padding">
+
+                                    <div class="caption">
+
+                                        <div class="caption-icon"><i class="fa fa-heart"></i></div>
+
+                                        <div class="caption-number">10 min</div>
+
+                                        <h4 class="caption-title">Razı qalan müştərilər</h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="200ms">
+
+                                <div class="thumbnail thumbnail-counto no-border no-padding">
+
+                                    <div class="caption">
+
+                                        <div class="caption-icon"><i class="fa fa-thumbs-o-up"></i></div>
+
+                                        <div class="caption-number">50 min</div>
+
+                                        <h4 class="caption-title">Bəyənən müştərilər</h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="300ms">
+
+                                <div class="thumbnail thumbnail-counto no-border no-padding">
+
+                                    <div class="caption">
+
+                                        <div class="caption-icon"><i class="fa fa-users"></i></div>
+
+                                        <div class="caption-number">12 min</div>
+
+                                        <h4 class="caption-title">üzv</h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 col-sm-6 wow fadeInDown" data-wow-offset="200" data-wow-delay="400ms">
+
+                                <div class="thumbnail thumbnail-counto no-border no-padding">
+
+                                    <div class="caption">
+
+                                        <div class="caption-icon"><i class="fa fa-comments-o"></i></div>
+
+                                        <div class="caption-number">1500</div>
+
+                                        <h4 class="caption-title">Rəy</h4>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+                <!-- PAGE -->
+
+                <section class="page-section">
+
+                    <div class="container">
+
+
+
+                        <h2 class="section-title wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                            <small style="font-size: 26px;">Suallar</small>
+
+                            <span>Ən çox verilən suallar</span>
+
+                        </h2>
+
+
+
+                        <div class="row">
+
+                            <div class="col-md-6 wow fadeInLeft" data-wow-offset="200" data-wow-delay="200ms">
+
+                                <!-- FAQ -->
+
+                                <div class="panel-group accordion" id="accordion" role="tablist" aria-multiselectable="true">
+
+                                    <!-- faq1 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading1">
+
+                                            <h4 class="panel-title">
+
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
+
+                                                    <span class="dot"></span> Ödəməli olduğum digər ödənişlər hansılardır?
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse1" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading1">
+
+                                            <div class="panel-body">
+
+                                                Saytımızda ödəməli olduğunuz digər ödənişlər, həyata keçirmək istədiyiniz xidmətlərlə əlaqəli olan məxaric və tələblər olacaq. Buna misal olaraq, satın alacağınız əmlak üçün ödənişlər, əmlak brokeri və ya əmlak agentlik xidmətləri üçün komissiya haqqı, tapşırıqların yerinə yetirilməsi üçün xidmət haqqı və ya digər dəyərli xidmətlər gəlir. Bu ödənişlər, əmlak sahəsində sizin tələblərinizə uyğun olaraq fərqli ola bilər. Ödənişlərin nəzərdə tutulduğu konkret xidmətlər və satın alma prosesinə bağlı olaraq, məlumatları dəqiqliklə təqdim etmək üçün müştərilərə saytımızda ətraflı məlumatlar və dəstək imkanları təklif edirik. Sizə dəyərli xidmətlər və ödənişlər haqqında tam məlumat vermək üçün əlaqə bölməmizdəki əlaqə məlumatları ilə bizə müraciət edə bilərsiniz.
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq1 -->
+
+                                    <!-- faq2 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading2">
+
+                                            <h4 class="panel-title">
+
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapse2">
+
+                                                    <span class="dot"></span> Agentinizlə harada əlaqə saxlaya bilərəm?
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+
+                                            <div class="panel-body">
+
+                                                Telefon: Bizə telefon vasitəsilə əlaqə saxlamaq üçün müştəri xidmətləri nömrəmizə zəng edə bilərsiniz. Əlaqə məlumatlarınızı telefonla bizə təqdim edərək, agentlərimizlə canlı danışmaq və sorğularınıza cavab ala bilərsiniz.
+
+E-poçt: Bizə e-poçt vasitəsilə də əlaqə saxlaya bilərsiniz. E-poçt ünvanımızı sizinlə paylaşıb, müraciət etmək və suallarınıza cavab almaq üçün e-poçt göndərə bilərsiniz. Agentlərimiz sizə mümkün qədər tez və dəqiqliklə cavab verməyə çalışacaqlar.
+
+
+Sosial media: Sosial media platformalarında da bizə müraciət edə bilərsiniz. Bizim rəsmi hesablarımızdan mesaj göndərərək suallarınızı və tələblərinizi bizə çatdıra bilərsiniz.
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq2 -->
+
+                                    <!-- faq3 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading3">
+
+                                            <h4 class="panel-title">
+
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false" aria-controls="collapse3">
+
+                                                    <span class="dot"></span> Mülkiyyəti nə vaxt əldə edəcəm?
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+
+                                            <div class="panel-body">
+
+                                                Mülkiyyəti əldə etmə vaxtı prosesin bir neçə faktora bağlı olacaq. Bunlar əmlakın növü, yeri, satıcı və alıcı arasında başa gələn razılaşmalar, bankaların kredit prosesləri və sair kimi faktorlar ola bilər. Hər bir mülkiyyət alqı-satqı prosesi fərqliliklər göstərə bilər və bu səbəbdən konkret bir müddət təyin etmək çətindir.
+
+Əmlak agentiniz sizinlə əlaqə saxlayaraq mülkiyyət əldə etmə prosesindəki mərhələlər və müddətlər haqqında daha dəqiq məlumat verə bilər. Agentiniz sizə lazımi sənədlərin toplanması, notarius təsdiqləməsi, banka işləri və digər prosedurlar haqqında məlumat verəcək və mülkiyyəti əldə etmə prosesini rəhbərlik edəcək.
+
+Mülkiyyət əldə etmə prosesi genelliklə bir neçə həftə və ya bir neçə ay davam edə bilər. Bu süreçdə mülkiyyətinizi əldə etmək üçün lazım olan bütün addımları diqqətlə izləyəcəyik və sizi hər bir mərhələdə məlumatlandıracağıq.
+
+Lakin məlumatlar konkret mülkiyyət alqı-satqı təcrübənizə və yerli qanunlara bağlı olaraq dəyişə bilər. Agentiniz sizə tam məlumat vermək və sizin mülkiyyətinizi əldə etmə prosesində sizə kömək etmək üçün ən yaxşı əldə etmək üçün ən yaxşı tədbirləri göstərəcək.
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq3 -->
+
+                                </div>
+
+                                <!-- /FAQ -->
+
+                            </div>
+
+                            <div class="col-md-6 wow fadeInRight" data-wow-offset="200" data-wow-delay="200ms">
+
+                                <!-- FAQ -->
+
+                                <div class="panel-group accordion" id="accordion2" role="tablist" aria-multiselectable="true">
+
+                                    <!-- faq1 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading21">
+
+                                            <h4 class="panel-title">
+
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse21" aria-expanded="false" aria-controls="collapse21">
+
+                                                    <span class="dot"></span> Əmlakdan əlavə xərclər nələrdir?
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse21" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading21">
+
+                                            <div class="panel-body">
+
+                                                Əmlakdan əlavə xərclər, satın aldığınız və ya kirayə aldığınız əmlakla bağlı gələn digər ödənişləri ifadə edir. İşləyən bir əmlakın yanında, aşağıdakı əlavə xərclər ən yaygın olanlarıdır:
+
+Yığıcılıq və əmlak vergiləri: Bir əmlakın sahibi olduğunuzda, yerli məhkəmələr tərəfindən təyin edilən vergi və ödəmələri ödəmək vəzifəsinizdir. Bu, əmlakın dəyərinə, sahəsinə və yerinə bağlı olaraq dəyişir.
+
+İstilik, su, elektrik və digər kommunal xidmətlər: Əmlakdan istifadə etdiyiniz müddət boyunca, müştərilərin əsas xidmətlər üçün hesabatlandırıldığı kommunal xidmət ödənişlərini də təşkil etməlisiniz. Bu, istilik sistemi, su, elektrik, internet, telefon və sair kimi xidmətlərə aid olabilir.
+
+Təmir və baxım xərcləri: Əmlakınızın keyfiyyətini və dəyərini qorumaq üçün düzəldici təmir və baxım işləri üçün xərclər edə bilərsiniz. Bu, boyama, tikinti təmiri, həyət təmiri, su çıxarışı və digər təmir və yeniləmə işləri olabilir.
+
+Əmlak sığortası: Əmlakınızı təhlükəsizliyiniz üçün sığortalamaq istəyə bilərsiniz. Bu, əmlakın dəyərinə və yeriyyə olan risklərə bağlı olaraq dəyişə bilən bir sığorta polisini ödəməyi içərəbilir.
+
+İdarəetmə və əmlak agentlik xidmətləri: Əmlakınızı kirayə vermək istədiyinizdə, əmlak agentlikləri və ya idarəetmə şirkətləri ilə əlaqə quraraq onlara xidmətlər üçün ödəniş etməlisiniz. Bu, mülkiyyətin idarə olunması, kirayə sözlaşması hazırlanması, kirayəçi seçimi, mülkiyyətin reklamının aparılması və sair kimi xidmətləri içərəbilir.
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq1 -->
+
+                                    <!-- faq2 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading22">
+
+                                            <h4 class="panel-title">
+
+                                                <a data-toggle="collapse" data-parent="#accordion2" href="#collapse22" aria-expanded="true" aria-controls="collapse22">
+
+                                                    <span class="dot"></span> Əmlakın satış prosesi necə işləyir?
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse22" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading22">
+
+                                            <div class="panel-body">
+
+                                            Əmlakın qiymətləndirilməsi: İlk addım olaraq, əmlağın dəyəri müəyyənləşdirilməlidir. Qiymətləndirmə prosesi, əmlağın özəllikləri, yeri, mülkiyyət sənədləri və ətrafındakı əmlak bazarı ilə bağlı faktorlara əsaslanır.
+
+Reklam və pazarlama: Əmlakın satışı üçün nümayiş etdirilməsi üçün effektiv reklam strategiyası təyin edilməlidir. Bu, internet saytlarında, sosial media platformalarında, mətbəxlərdə, broşürlərdə və sair kimi vasitələrdə əmlağın məlumatlarının yayılması ilə həyata keçirilir.
+
+Görüşmələr və müzakirələr: Potensial alıcılarla görüşmələr təşkil edilir və onlara əmlağın detallarını, özəlliklərini və satış şərtlərini təqdim edirlər. Alıcıların sualları cavablandırılır və qiymət müzakirəsi aparılır.
+
+Anlaşma və sənədləşdirmə: Alıcı ilə anlaşma əldə edildikdən sonra, əmlağın satışı üçün şərtləri əhatə edən yazılı bir anlaşma bağlanır. Bu anlaşmada əmlağın satış qiyməti, ödəmə şərtləri, alıcının və satıcının tərəflərinin hüquqları və məsuliyyətləri kifayət qədər ətraflı şəkildə təyin edilməlidir.
+
+Hüquqi prosedurlar və qeydiyyat: Satış anlaşmasının təsdiqlənməsi üçün hüquqi prosedurlar yerinə yetirilməlidir. Bu, notarius təsdiqlənməsi, əmlakın təşkilatlarla olan borclarının ödənilməsi, tapşırıqların yerinə yetirilməsi və dəyişikliklərin ərizəsi ilə bağlı olabilir. Bu proses, satışın hüquqi olaraq tamamlanmasını təmin edir.
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq2 -->
+
+                                    <!-- faq3 -->
+
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading" role="tab" id="heading23">
+
+                                            <h4 class="panel-title">
+
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse23" aria-expanded="false" aria-controls="collapse23">
+
+                                                    <span class="dot"></span> İpoteka haqqında məlumat və nələri diqqətə almaq lazımdır
+
+                                                </a>
+
+                                            </h4>
+
+                                        </div>
+
+                                        <div id="collapse23" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading23">
+
+                                            <div class="panel-body">
+
+                                            İpoteka, bir əmlakın satın alınması üçün bir mənzil krediti alma prosesini ifadə edir. İpoteka, genəlliklə uzun müddətli və büyük məbləğli kreditlərdir və alıcıya mülkiyyətin məxsus olduğu əmlakın hansı hissəsini (misal üzrə, ev, daire) məxsuslaşdırmaq hüququnu verir. İşləyən bir ipoteka prosesi aşağıdakı mərhələlərdən ibarət olur:
+
+Kreditə uyğunluq yoxlaması: İlk addım kredit tələbinin bank tərəfindən yoxlanılmasıdır. Bank, alıcının maliyyə gücünü və kreditə uyğunluğunu qiymətləndirəcək, kredit skorunu, gəlir və borcları yoxlayacaq.
+
+İpoteka şərtlərinin müzakirəsi: Bank tərəfindən təqdim olunan ipoteka şərtləri müzakirə olunur. Bu şərtlər arasında kredit faizi, geri ödəmə müddəti, avans məbləği, əmlakın qiyməti və sair kimi faktorlar yer alır.
+
+Əmlakın qiymətləndirilməsi: Bank, əmlağın qiymətini müəyyən edir və ipoteka kreditinin tutarını buna əsasən təyin edir. Bu prosesdə əmlakın dəyəri, bazar dəyəri və inkişaf perspektivləri əsasında dəyərləndirilir.
+
+Təşkilatlarla əlaqələr: İpoteka tələbini yerinə yetirmək üçün bank, mülkiyyət sənədləri və digər hüquqi prosedurları doğrulamaq üçün əmlak qeydiyyat və dövlət təşkilatları ilə əlaqə qurur.
+
+Anlaşmanın bağlanması və kreditin təsdiqlənməsi: İpoteka anlaşması bank və alıcı tərəfindən imzalanır və kredit təsdiqlənməsi üçün hüquqi prosedurlar yerinə yetirilir. Bu prosesdə alıcı ödəniş tənzimləmələri və digər ipoteka şərtlərini qəbul edir.
+
+İpoteka prosesi kompleks və detallı ola bilər. Alıcılar, ipoteka prosesinə başlamadan əvvəl dəqiq məlumat toplamaq və aşağıdakı məsələləri diqqətə almaq üçün bir neçə nüvəni diqqətə almağa ehtiyac duyurlar:
+
+Kredit faizi: Bankın təklif etdiyi faiz dərəcəsi və bunun uzun müddətli təsiri.
+Geri ödəmə şərtləri: Kreditin geri ödənilmə müddəti, aylıq ödənişlər və cərimə faizləri haqqında ətraflı məlumat.
+Avans məbləği: İpoteka kreditinin verilməsi üçün tələb olunan minimum avans məbləği.
+Əmlakın təyin edilməs
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                    <!-- /faq3 -->
+
+                                </div>
+
+                                <!-- /FAQ -->
+
+                            </div>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+
+
+                <!-- PAGE -->
+
+
+
+                <!-- /PAGE -->
+                
+                <!-- PAGE -->
+
+                <section class="page-section">
+
+                    <div class="container">
+
+
+
+                        <h2 class="section-title wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                            <small>Bloqumuzda ən son əmlak xəbərləri</small>
+
+                            <span>SON BLOQ POSTLARI</span>
+
+                        </h2>
+
+
+
+                        <div class="row">
+                            {% if blog %}
+                            {% for post in blog %}
+                            <div class="col-md-6 wow fadeInLeft" data-wow-offset="200" data-wow-delay="200ms">
+
+                                <div class="recent-post alt">
+
+                                    <div class="media">
+
+                                        <a class="media-link" href="#">
+
+                                            <img class="media-object" src="{{ post.post_image1.url }}" alt="" style="width: 550px; height:470px;">
+
+                                            <i class="fa fa-plus"></i>
+
+                                        </a>
+
+                                        <div class="media-left">
+
+                                            <div class="meta-date">
+
+                                                <div class="day">{{ post.post_date.day }}</div>
+
+                                                <div class="month">
+                                                    {% if post.post_date.month == 1 %}
+                                                        YAN
+                                                    {% elif post.post_date.month == 2 %}
+                                                    FEV
+                                                    {% elif post.post_date.month == 3 %}
+                                                    MAR
+                                                    {% elif post.post_date.month == 4 %}
+                                                    APR
+                                                    {% elif post.post_date.month == 5 %}
+                                                    MAY
+                                                    {% elif post.post_date.month == 6 %}
+                                                    IYUN
+                                                    {% elif post.post_date.month == 7 %}
+                                                    IYUL
+                                                    {% elif post.post_date.month == 8 %}
+                                                    AVG
+                                                    {% elif post.post_date.month == 9 %}
+                                                    SEN
+                                                    {% elif post.post_date.month == 10 %}
+                                                    OKT
+                                                    {% elif post.post_date.month == 11 %}
+                                                    NOY
+                                                    {% else %}
+                                                    DEC
+                                                    {% endif %}
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class="media-body">
+
+
+
+                                            <h4 class="media-heading"><a href="#">{{ post.post_title }}</a></h4>
+
+                                            <div class="media-excerpt">{{ post.post_article }}</div>
+
+                                            <br />
+
+                                            <a href="{% url 'detail-view' post.id %}" class="btn btn-theme"><i class="fa fa-chevron-right">&nbsp;</i> Ətraflı</a>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            {% endfor %}
+                            {% endif %}
+
+
+                        </div>
+
+
+
+                        <div class="text-center margin-top wow fadeInDown" data-wow-offset="200" data-wow-delay="100ms">
+
+                            <a href="{% url 'blog' %}" class="btn btn-theme ripple-effect btn-theme-light btn-more-posts">Bütün blog postları gör</a>
+
+                        </div>
+
+
+
+                    </div>
+
+                </section>
+
+                <!-- /PAGE -->
+
+            </div>
+
+            <!-- /CONTENT AREA -->
+
+
+
+            {% include "./footer-1.html" %}
+
+
+
+            <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
+
+
+
+        </div>
+
+        <!-- /WRAPPER -->
+
+
+{% endblock content %}
+
+

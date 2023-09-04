@@ -1,0 +1,166 @@
+{% load static %}
+<!-- HEADER -->
+
+<header class="header fixed">
+
+    <div class="header-wrapper">
+
+        <div class="container">
+
+            <div class="row">
+
+                <!-- Navigation -->
+
+                <div class="col-md-5 left-menu">
+
+                    <nav class="navigation closed clearfix">
+
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+
+                                <!-- navigation menu -->
+
+                                <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
+
+                                <ul class="nav sf-menu">
+
+                                    <li><a href="{% url 'index' %}">Ana Səhifə</a></li>
+
+                                    <li><a href="{% url 'about' %}">haqqımızda</a></li>
+
+                                    <li><a href="{% url 'property' %}">Evlər</a></li>
+
+                                    <li><a href="{% url 'faqs' %}">suallar</a></li>
+
+                                </ul>
+
+                                <!-- /navigation menu -->
+
+                            </div>
+
+                        </div>
+
+                        <!-- Add Scroll Bar -->
+
+                        <div class="swiper-scrollbar"></div>
+
+                    </nav>
+
+
+
+                    <!-- Mobile menu toggle button -->
+
+                    <a href="#" class="menu-toggle btn ripple-effect btn-theme-transparent"><i class="fa fa-bars"></i></a>
+
+                    <!-- /Mobile menu toggle button -->
+
+                </div>
+
+                <!-- /Navigation -->
+
+
+
+                <!-- Logo -->
+
+                <div class="col-md-2 no-padding top-logo">
+
+                    <div class="logo">
+
+                        <a href="{% url 'index' %}"><img src="{% static 'assets/ico/logo.jpg' %}" alt="Öz Evin"/></a>
+
+                    </div>
+
+                </div>
+
+                <!-- /Logo -->
+
+
+
+
+
+
+
+                <!-- Navigation -->
+
+                <div class="col-md-5 right-menu">
+
+                    <nav class="navigation closed clearfix">
+
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+
+                                <!-- navigation menu -->
+
+                                <a href="#" class="menu-toggle-close btn"><i class="fa fa-times"></i></a>
+
+                                <ul class="nav sf-menu">       
+
+                                    {% if user.is_authenticated %}
+
+                                    <li><a href="{% url 'exit' %}">Çıxış</a></li>
+
+                                    {% else %}
+
+                                    <li><a href="{% url 'log-in' %}">Giriş</a></li>
+
+                                    <li><a href="{% url 'sign-in' %}">qeydiyyat</a></li>
+                                    
+                                    {% endif %}
+
+                                    <li><a href="{% url 'blog' %}">Blog</a></li>
+
+                                    <li><a href="{% url 'contact' %}">əlaqə</a></li>
+
+                                    <li>
+
+                                        <ul class="social-icons">
+
+                                            <li><a href="https://www.facebook.com/profile.php?id=100056406723015" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
+
+                                            <li><a href="https://twitter.com/emin4564" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a></li>
+
+                                            <li><a href="https://www.instagram.com/emin_official_m_ov/" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a></li>
+
+                                            <li><a href="https://www.pinterest.com/eminmm44/" class="pinterest" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+
+                                        </ul>
+
+                                    </li>
+
+                                </ul>
+
+                                <!-- /navigation menu -->
+
+                            </div>
+
+                        </div>
+
+                        <!-- Add Scroll Bar -->
+
+                        <!--<div class="swiper-scrollbar"></div>-->
+
+                    </nav>
+
+                    <!-- Mobile menu toggle button -->
+
+                    <a href="#" class="menu-toggle btn ripple-effect btn-theme-transparent"><i class="fa fa-bars"></i></a>
+
+                    <!-- /Mobile menu toggle button -->
+
+                </div>
+
+                <!-- /Navigation -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+</header>
+
+<!-- /HEADER -->

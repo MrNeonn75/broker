@@ -1,0 +1,31 @@
+<!-- Pagination -->
+<div class="pagination-wrapper">
+    <ul class="pagination">
+        {% if page_obj.has_previous %}
+        <li class="disabled"><a href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-angle-double-left"></i> Əvvəlki</a></li>
+        <li><a href="?page=1">1</a></li>
+        {% else %}
+        <li class="disabled"><a href="" disabled><i class="fa fa-angle-double-left"></i> Əvvəlki</a></li>
+        {% endif %}
+        {% if page_obj.has_previous %}
+        {% if page_obj.previous_page_number == 1 %}
+        {% else %}
+        <li><a href="?page={{ page_obj.previous_page_number }} ">{{ page_obj.previous_page_number}}</a></li>
+        {% endif %}
+        {% endif %} 
+        <li class="active"><a href="?page={{ page_obj.number }} ">{{ page_obj.number }}</a></li>
+        {% if page_obj.has_next %}
+        {% if page_obj.next_page_number == page_obj.paginator.num_pages %}
+        {% else %}
+        <li><a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a></li>
+        {% endif %}
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.paginator.num_pages}}">{{ page_obj.paginator.num_pages }}</a></li>
+        <li><a href="?page={{ page_obj.next_page_number }}">Növbəti <i class="fa fa-angle-double-right"></i></a></li>
+        {% else %}
+        <li class="disabled"><a href="" disabled>Növbəti <i class="fa fa-angle-double-right"></i></a></li>
+        {% endif %}
+    </ul>
+</div>
+<!-- /Pagination -->

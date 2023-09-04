@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <!-- WRAPPER -->
+        <div class="wrapper">
+
+            
+
+            <!-- CONTENT AREA -->
+            <div class="content-area">
+
+                <!-- PAGE -->
+                <section class="page-section text-center error-page light">
+                    <div class="container">
+                        <h3>404</h3>
+                        <h2><i class="fa fa-warning"></i>Axtardığınız səhifə mövcud deyil</h2>
+                        <p><a class="btn btn-theme btn-theme-dark" href="{% url 'index' %}">Əsas səhifəyə geri dön</a></p>
+                    </div>
+                </section>
+                <!-- /PAGE -->
+
+
+
+            </div>
+            <!-- /CONTENT AREA -->
+
+            
+
+            <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
+
+        </div>
+        <!-- /WRAPPER -->
+{% endblock content %}
+        

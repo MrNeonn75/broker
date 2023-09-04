@@ -1,0 +1,191 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+    
+<!-- Mirrored from jthemes.net/themes/f-html/reEstate/realeastate/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 May 2023 09:07:40 GMT -->
+<head>
+
+    <meta charset="utf-8">
+
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <title>ÖzEvin - Daşınmaz əmlak şirkəti</title>
+
+
+
+    <!-- Favicon -->
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static 'assets/ico/apple-touch-icon-144-precomposed.png' %}">
+
+    <link rel="shortcut icon" href="{% static 'assets/ico/icon.ico' %}">
+
+
+
+    <!-- CSS Global -->
+
+    <link href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/plugins/bootstrap-select/css/bootstrap-select.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/plugins/fontawesome/css/font-awesome.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/plugins/prettyphoto/css/prettyPhoto.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/plugins/owl-carousel2/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/plugins/owl-carousel2/assets/owl.theme.default.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/plugins/animate/animate.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/plugins/swiper/css/swiper.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/plugins/datetimepicker/css/bootstrap-datetimepicker.min.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/plugins/fontawesome/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'assets/css/brands.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'assets/css/solid.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'assets/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'assets/css/inc/awesome-bootstrap-checkbox.css' %}" >  
+    
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Theme CSS -->
+
+    <link href="{% static 'assets/css/theme.css' %}" rel="stylesheet">
+
+    <link href="{% static 'assets/css/theme-blue-1.css' %}" rel="stylesheet" id="theme-config-link">
+
+    {% block style %}{% endblock style %}
+
+    <!-- Head Libs -->
+
+    <script src="{% static 'assets/plugins/modernizr.custom.js' %}"></script>
+
+    <script src="{% static 'assets/js/fontawesome.js' %}"></script>
+
+    <script src="{% static 'assets/js/solid.js' %}"></script>
+
+    <script src="{% static 'assets/js/brands.js' %}"></script>
+    
+    <script src="{% static 'assets/js/all.min.js' %}"></script>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+    <!--[if lt IE 9]>
+
+    <script src="assets/plugins/iesupport/html5shiv.js"></script>
+
+    <script src="assets/plugins/iesupport/respond.min.js"></script>
+
+    <![endif]-->
+
+</head>
+<body id="home" class="wide">
+    <!-- PRELOADER -->
+
+    <div id="preloader">
+
+        <div id="loading-center">
+
+            <div id="loading-center-absolute">
+
+                <div class="loader-logo"> <img src="{% static 'assets/img/loader-logo.png' %}" alt=""> </div>
+
+                <div class="object" id="first_object"> </div>
+
+                <div class="object" id="second_object"></div>
+
+                <div class="object" id="third_object"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- /PRELOADER -->
+
+    {% include "./header.html" %}
+
+    {% block content %}{% endblock content %}
+
+    
+    {% include "./footer-2.html" %}
+
+    <!-- JS Global -->
+
+    <script src="{% static 'assets/plugins/jquery/jquery-1.11.1.min.js' %}"></script>
+
+    <script src="{% static 'assets/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+    <script src="{% static 'assets/plugins/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+
+    <script src="{% static 'assets/plugins/superfish/js/superfish.min.js' %}"></script>
+
+    <script src="{% static 'assets/plugins/prettyphoto/js/jquery.prettyPhoto.js' %}"></script>
+
+    <script src="{% static 'assets/plugins/owl-carousel2/owl.carousel.min.js' %}"></script>
+
+    <script src="{% static 'assets/plugins/jquery.sticky.min.js' %}"></script>
+
+    <script src="{% static 'assets/plugins/jquery.easing.min.js' %}"></script>
+
+    <script src="{% static 'assets/plugins/jquery.smoothscroll.min.js' %}"></script>
+
+    <!--<script src="assets/plugins/smooth-scrollbar.min.js"></script>-->
+
+    <script src="{% static 'assets/plugins/wow/wow.min.js' %}"></script>
+
+    <script>
+
+        // WOW - animated content
+
+        new WOW().init();
+
+    </script>
+
+    <script src="{% static 'assets/plugins/swiper/js/swiper.jquery.min.js' %}"></script>
+
+    <script src="{% static 'assets/plugins/datetimepicker/js/moment-with-locales.min.js' %}"></script>
+
+    <script src="{% static 'assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js' %}"></script>
+
+
+
+    <!-- JS Page Level -->
+
+    <script src="{% static 'assets/js/theme-ajax-mail.js' %}"></script>
+
+    <script src="{% static 'assets/js/theme.js' %}"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+
+
+
+
+
+    <!--[if (gte IE 9)|!(IE)]><!-->
+
+    <script src="{% static 'assets/plugins/jquery.cookie.js' %}"></script>
+
+    <!--<![endif]-->
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+        <!-- WRAPPER -->
+        <div class="wrapper">
+
+
+
+            <!-- CONTENT AREA -->
+            <div class="content-area">
+
+                <!-- BREADCRUMBS -->
+                <section class="page-section breadcrumbs text-center">
+                    <div class="container">
+                        <div class="page-header">
+                            <h1>{{ post.post_title }}</h1>
+                        </div>
+                        <ul class="breadcrumb">
+                            <li><a href="/">Ana Səhifə</a></li>
+                            <li><a href="/blog/">Blog</a></li>
+                            <li class="active">{{ post.post_title }}</li>
+                        </ul>
+                    </div>
+                </section>
+                <!-- /BREADCRUMBS -->
+
+                <!-- PAGE WITH SIDEBAR -->
+                <section class="page-section sub-page">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-lg-8 col-md-7 col-sm-12 project-media" style="width: 100%">
+                                <div class="img-carousel">
+                                    {% comment %} {% if post.post_image1.url %} {% endcomment %}
+                                    <div><img src="{{ post.post_image1.url }}" alt=""/></div>
+                                    {% comment %} {% endif %} {% endcomment %}
+
+                                    {% if post.post_image2 %}
+                                    <div><img src="{{ post.post_image2.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.post_image3 %}
+                                    <div><img src="{{ post.post_image3.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.post_image4 %}
+                                    <div><img src="{{ post.post_image4.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.post_image5 %}
+                                    <div><img src="{{ post.post_image5.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.post_image6 %}
+                                    <div><img src="{{ post.post_image6.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.post_image7 %}
+                                    <div><img src="{{ post.post_image7.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.post_image7 %}
+                                    <div><img src="{{ post.post_image7.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.post_image8 %}
+                                    <div><img src="{{ post.post_image8.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.post_image9 %}
+                                    <div><img src="{{ post.post_image9.url }}" alt=""/></div>
+                                    {% endif %}
+
+                                    {% if post.post_image10 %}
+                                    <div><img src="{{ post.post_image10.url }}" alt=""/></div>
+                                    {% endif %}
+
+                            </div>
+
+                            <div class="col-lg-4 col-md-5 col-sm-7" style="width:100%;">
+                                <div class="project-overview">
+                                    <h3 class="block-title"><span>{{ post.post_title }}</span></h3>
+                                    <p>{{ post.post_article }}</p>
+                                </div>
+
+                                <div class="project-details">
+                                    <h3 class="block-title"><span>Project Details</span></h3>
+                                    <dl class="dl-horizontal">
+
+                                        <dt>Release Date</dt>
+                                        <dd>{{ post.post_date }}</dd>
+                                    </dl>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <hr class="page-divider"/>
+
+                        <hr class="page-divider half"/>
+                        
+                    </div>
+                </section>
+                <!-- /PAGE WITH SIDEBAR -->
+
+            </div>
+            <!-- /CONTENT AREA -->
+
+            {% include './footer-1.html' %}
+
+            <div id="to-top" class="to-top"><i class="fa fa-angle-up"></i></div>
+
+        </div>
+        <!-- /WRAPPER -->
+{% endblock content %}
+       
